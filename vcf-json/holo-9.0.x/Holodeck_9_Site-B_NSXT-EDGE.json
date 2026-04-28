@@ -1,0 +1,71 @@
+{
+  "asn": 65006,
+  "edgeAdminPassword": "VMware123!VMware123!",
+  "edgeAuditPassword": "VMware123!VMware123!",
+  "edgeRootPassword": "VMware123!VMware123!",
+  "mtu": 8000,
+  "tier0Name": "t0-mgmt-b",
+  "tier0RoutingType": "EBGP",
+  "tier0ServicesHighAvailability": "ACTIVE_STANDBY",
+  "tier1Name": "t1-mgmt-b",
+  "edgeClusterName": "edgecl-mgmt-b",
+  "edgeClusterProfileType": "DEFAULT",
+  "edgeClusterType": "NSX-T",
+  "edgeFormFactor": "LARGE",
+  "edgeNodeSpecs": [
+    {
+      "clusterId": "62c9536b-6c1c-4779-9914-807c5c4ace9d",
+      "edgeNodeName": "edge-mgmt-01b.site-b.vcf.lab",
+      "edgeTep1IP": "10.2.5.130/25",
+      "edgeTep2IP": "10.2.5.131/25",
+      "edgeTepGateway": "10.2.5.129",
+      "edgeTepVlan": "48",
+      "interRackCluster": false,
+      "managementGateway": "10.2.1.1",
+      "managementIP": "10.2.1.180/24",
+      "uplinkNetwork": [
+        {
+          "asnPeer": 65005,
+          "bgpPeerPassword": "VMware123!",
+          "peerIP": "10.2.6.1/25",
+          "uplinkInterfaceIP": "10.2.6.2/25",
+          "uplinkVlan": "49"
+        },
+        {
+          "asnPeer": 65005,
+          "bgpPeerPassword": "VMware123!",
+          "peerIP": "10.2.6.129/25",
+          "uplinkInterfaceIP": "10.2.6.130/25",
+          "uplinkVlan": "50"
+        }
+      ]
+    },
+    {
+      "clusterId": "62c9536b-6c1c-4779-9914-807c5c4ace9d",
+      "edgeNodeName": "edge-mgmt-02b.site-b.vcf.lab",
+      "edgeTep1IP": "10.2.5.132/25",
+      "edgeTep2IP": "10.2.5.133/25",
+      "edgeTepGateway": "10.2.5.129",
+      "edgeTepVlan": "48",
+      "interRackCluster": false,
+      "managementGateway": "10.2.1.1",
+      "managementIP": "10.2.1.181/24",
+      "uplinkNetwork": [
+        {
+          "asnPeer": 65005,
+          "bgpPeerPassword": "VMware123!",
+          "peerIP": "10.2.6.1/25",
+          "uplinkInterfaceIP": "10.2.6.3/25",
+          "uplinkVlan": "49"
+        },
+        {
+          "asnPeer": 65005,
+          "bgpPeerPassword": "VMware123!",
+          "peerIP": "10.2.6.129/25",
+          "uplinkInterfaceIP": "10.2.6.131/25",
+          "uplinkVlan": "50"
+        }
+      ]
+    }
+  ]
+}
