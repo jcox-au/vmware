@@ -2,7 +2,7 @@
 
 Import-Module VCF.PowerCLI
 
-function Sleep-Count($s){
+function Wait-Count($s){
     do {
         Write-Progress -SecondsRemaining $s -Activity "Wait" -Status "Seconds remaining: " -Id 1
         $s--
@@ -20,7 +20,7 @@ Connect-VIServer esx-02a.site-a.vcf.lab
 Start-VM "nsx-mgmt-01a"
 Disconnect-VIServer * -Confirm:$false
 
-Sleep-Count 900
+Wait-Count 900
 
 Connect-VIServer vc-mgmt-a.site-a.vcf.lab
 #Start-VM "nsx-mgmt-02a"
@@ -44,7 +44,7 @@ Connect-VIServer esx-02b.site-b.vcf.lab
 Start-VM "nsx-mgmt-01b"
 Disconnect-VIServer * -Confirm:$false
 
-Sleep-Count 900
+Wait-Count 900
 
 Connect-VIServer vc-mgmt-b.site-b.vcf.lab
 Start-VM "ops-b"

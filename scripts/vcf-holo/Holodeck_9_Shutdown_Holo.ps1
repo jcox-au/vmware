@@ -2,6 +2,13 @@
 
 Import-Module VCF.PowerCLI
 
+function Wait-Count($s){
+    do {
+        Write-Progress -SecondsRemaining $s -Activity "Wait" -Status "Seconds remaining: " -Id 1
+        $s--
+        Start-Sleep -Seconds 1
+    } until ($s -eq 0)
+} 
 
 Connect-VIServer "vc-mgmt-a.site-a.vcf.lab"
   Stop-VMGuest -VM "edge-mgmt-01a" -Confirm:$false
@@ -11,7 +18,7 @@ Connect-VIServer "vc-mgmt-a.site-a.vcf.lab"
   Stop-VMGuest -VM "sddcmanager-a" -Confirm:$false
   Stop-VMGuest -VM "ops-a" -Confirm:$false
   Stop-VMGuest -VM "nsx-mgmt-01a" -Confirm:$false
-  Sleep 20
+  Wait-Count 20
   Stop-VMGuest -VM "vc-mgmt-a" -RunAsync -Confirm:$false
 Disconnect-VIServer * -Confirm:$false
 
@@ -24,7 +31,7 @@ Connect-VIServer "vc-mgmt-b.site-b.vcf.lab"
   Stop-VMGuest -VM "opscollector-01b" -Confirm:$false
   Stop-VMGuest -VM "sddcmanager-b" -Confirm:$false
   Stop-VMGuest -VM "nsx-mgmt-01b" -Confirm:$false
-  Sleep 20
+  Wait-Count 20
   Stop-VMGuest -VM "vc-mgmt-b" -Confirm:$false
 Disconnect-VIServer * -Confirm:$false
 
@@ -42,9 +49,9 @@ Connect-VIServer "vcenter-mgmt.vcf.sddc.lab"
   Stop-VMGuest -VM "vrops-cp" -Confirm:$false
   Stop-VMGuest -VM "vrslcm" -Confirm:$false
   Stop-VMGuest -VM "ws1" -Confirm:$false
-  Sleep 120
+  Wait-Count 120
   Stop-VMGuest -VM "nsx-mgmt-1" -Confirm:$false
   Stop-VMGuest -VM "sddc-manager" -Confirm:$false
-  Sleep 20
+  Wait-Count 20
   Stop-VMGuest -VM "vcenter-mgmt" -Confirm:$false
 Disconnect-VIServer * -Confirm:$false
