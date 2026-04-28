@@ -1,6 +1,6 @@
 ﻿# Script to pin vCenter to Host 1 and NSX to Host 2 in Holodeck Environments
 
-Import-Module VMware.PowerCLI
+Import-Module VCF.PowerCLI
 
 # Set Site - A or B
 $HoloSite = "B"

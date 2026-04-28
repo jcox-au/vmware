@@ -1,6 +1,6 @@
 ﻿# Script to set all VMs in the Holodeck Env - Disable Encrypted vMotion (Performance)
 
-Import-Module VMware.PowerCLI
+Import-Module VCF.PowerCLI
 
 # Set Host vCenter
 # $vCenter = "vcenter.lab.home"

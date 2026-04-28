@@ -1,6 +1,6 @@
 ﻿# Script to boot Holodeck
 
-Import-Module VMware.PowerCLI
+Import-Module VCF.PowerCLI
 
 function Sleep-Count($s){
     do {
@@ -37,7 +37,7 @@ Disconnect-VIServer * -Confirm:$false
 #Site-B
 
 Connect-VIServer esx-01b.site-b.vcf.lab
-Start-VM "vc-mgmt-b"
+Start-VM -VM "vc-mgmt-b"
 Disconnect-VIServer * -Confirm:$false
 
 Connect-VIServer esx-02b.site-b.vcf.lab

@@ -1,6 +1,6 @@
 ﻿# Script to set all VMs in the vApp to Group1 / Shutdown Settings
 
-Import-Module VMware.PowerCLI
+Import-Module VCF.PowerCLI
 
 # Set vApp Name
 $vAppName = "vcf9-green-b"

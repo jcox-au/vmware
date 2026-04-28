@@ -1,6 +1,6 @@
 ﻿# Script to shutdown Holodeck
 
-Import-Module VMware.PowerCLI
+Import-Module VCF.PowerCLI
 
 
 Connect-VIServer "vc-mgmt-a.site-a.vcf.lab"
