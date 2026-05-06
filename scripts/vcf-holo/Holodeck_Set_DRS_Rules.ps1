@@ -3,7 +3,7 @@
 Import-Module VCF.PowerCLI
 
 # Set Site - A or B
-$HoloSite = "B"
+$HoloSite = "A"
 
 
 
@@ -12,7 +12,7 @@ If ($HoloSite -eq "A") {
 $vCenter = "vc-mgmt-a.site-a.vcf.lab"
 $Host1 = "esx-01a.site-a.vcf.lab"
 $Host2 = "esx-02a.site-a.vcf.lab"
-$Cluster = "cluster-mgmt-01a"
+$Cluster = "holo-a-mgmt-cl01"
 $vcVM = "vc-mgmt-a"
 $nsxVM = "nsx-mgmt-01a"
 

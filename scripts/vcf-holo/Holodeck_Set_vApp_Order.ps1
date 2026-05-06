@@ -3,7 +3,7 @@
 Import-Module VCF.PowerCLI
 
 # Set vApp Name
-$vAppName = "vcf9-green-b"
+$vAppName = "purp-b"
 
 # Set Host vCenter
 $vCenter = "vcenter.lab.home"
