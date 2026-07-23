@@ -12,7 +12,7 @@ If ($HoloSite -eq "A") {
 $vCenter = "vc-mgmt-a.site-a.vcf.lab"
 $Host1 = "esx-01a.site-a.vcf.lab"
 $Host2 = "esx-02a.site-a.vcf.lab"
-$Cluster = "holo-a-mgmt-cl01"
+$Cluster = "cluster-mgmt-01a"
 $vcVM = "vc-mgmt-a"
 $nsxVM = "nsx-mgmt-01a"
 
