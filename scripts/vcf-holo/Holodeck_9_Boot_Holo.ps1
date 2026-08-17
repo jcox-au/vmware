@@ -12,23 +12,22 @@ function Wait-Count($s){
 
 #Site-A
 
-Connect-VIServer esx-01a.site-a.vcf.lab
+Connect-VIServer esx-01a.site-a.vcf.lab -User root -Password VMware123!VMware123!
 Start-VM "vc-mgmt-a"
 Disconnect-VIServer * -Confirm:$false
 
-Connect-VIServer esx-02a.site-a.vcf.lab
+Connect-VIServer esx-02a.site-a.vcf.lab -User root -Password VMware123!VMware123!
 Start-VM "nsx-mgmt-01a"
 Disconnect-VIServer * -Confirm:$false
 
 Wait-Count 900
 
-Connect-VIServer vc-mgmt-a.site-a.vcf.lab
+Connect-VIServer vc-mgmt-a.site-a.vcf.lab -User administrator@vsphere.local -Password VMware123!VMware123!
 #Start-VM "nsx-mgmt-02a"
 #Start-VM "nsx-mgmt-03a"
 Start-VM "ops-a"
 Start-VM "opscollector-01a"
 Start-VM "sddcmanager-a"
-Start-VM "opslcm-a"
 Start-VM "edge-mgmt-01a"
 Start-VM "edge-mgmt-02a"
 Disconnect-VIServer * -Confirm:$false
@@ -36,21 +35,20 @@ Disconnect-VIServer * -Confirm:$false
 
 #Site-B
 
-Connect-VIServer esx-01b.site-b.vcf.lab
+Connect-VIServer esx-01b.site-b.vcf.lab -User root -Password VMware123!VMware123!
 Start-VM -VM "vc-mgmt-b"
 Disconnect-VIServer * -Confirm:$false
 
-Connect-VIServer esx-02b.site-b.vcf.lab
+Connect-VIServer esx-02b.site-b.vcf.lab -User root -Password VMware123!VMware123!
 Start-VM "nsx-mgmt-01b"
 Disconnect-VIServer * -Confirm:$false
 
 Wait-Count 900
 
-Connect-VIServer vc-mgmt-b.site-b.vcf.lab
+Connect-VIServer vc-mgmt-b.site-b.vcf.lab -User administrator@vsphere.local -Password VMware123!VMware123!
 Start-VM "ops-b"
 Start-VM "opscollector-01b"
 Start-VM "sddcmanager-b"
-Start-VM "opslcm-b"
 Start-VM "edge-mgmt-01b"
 Start-VM "edge-mgmt-02b"
 Disconnect-VIServer * -Confirm:$false
