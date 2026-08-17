@@ -27,6 +27,8 @@ Connect-VIServer vc-mgmt-a.site-a.vcf.lab -User administrator@vsphere.local -Pas
 #Start-VM "nsx-mgmt-03a"
 Start-VM "ops-a"
 Start-VM "opscollector-01a"
+Start-VM "license-a"
+Get-VM | Where-Object -Property "Name" -Like "vsp*" | Start-VM
 Start-VM "sddcmanager-a"
 Start-VM "edge-mgmt-01a"
 Start-VM "edge-mgmt-02a"
@@ -48,6 +50,8 @@ Wait-Count 900
 Connect-VIServer vc-mgmt-b.site-b.vcf.lab -User administrator@vsphere.local -Password VMware123!VMware123!
 Start-VM "ops-b"
 Start-VM "opscollector-01b"
+Start-VM "license-b"
+Get-VM | Where-Object -Property "Name" -Like "vsp*" | Start-VM
 Start-VM "sddcmanager-b"
 Start-VM "edge-mgmt-01b"
 Start-VM "edge-mgmt-02b"
